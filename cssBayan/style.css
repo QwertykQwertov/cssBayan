@@ -67,7 +67,6 @@ input:checked+label>.img {
 
 input:active+label {
   opacity: 0.7;
-  /* transition: all 0.5s; */
 }
 
 @media screen and (max-width: 820px) {
