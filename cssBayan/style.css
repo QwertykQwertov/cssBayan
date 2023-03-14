@@ -4,22 +4,40 @@ body {
   min-height: 100vh;
 }
 
-.container {
+header {
+  max-width: 500px;
+  min-width: 320px;
+  width: 90vw;
+  margin: 10px auto;
+}
+
+.container{
   max-width: 500px;
   min-width: 320px;
   width: 90vw;
   padding: 10px;
   margin: 10px auto;
-} 
+  cursor: pointer;
+}
+
+.container:hover label, .container:hover span>i{
+  color: black;
+}
+
+hr{
+  margin: 0;
+}
 
 input {
-  opacity: 0;
+  width: 100%;
+  appearance: none;
 }
 
 label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  /* color:rgb(99, 117, 117) */
 }
 
 .label-span {
@@ -29,6 +47,7 @@ label {
 }
 
 .icon-close {
+  /* color:rgb(99, 117, 117); */
   height: 20px;
   width: 20px;
   transition: all 0.5s;
@@ -42,8 +61,12 @@ label {
   margin: 10px auto;
 }
 
-/* Отключаем :hover для десктопов */
+/* Отключаем :hover для не десктопов */
 @media screen and (min-width: 820px) {
+  label, .icon-close{
+    color:rgb(99, 117, 117)
+  }
+
   input:hover+label>.img {
     height: 400px;
     transition: all 0.5s;
@@ -58,6 +81,10 @@ label {
 
 input:checked+label>.label-span>.icon-close {
   transform: rotate(45deg);
+}
+
+input:checked+label, input:checked+label>span>i{
+  color: black
 }
 
 input:checked+label>.img {
